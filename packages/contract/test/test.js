@@ -11,6 +11,7 @@ function tokens(n) {
 describe('TokenFarm', () => {
   async function deployTokenFixture() {
     const [owner, investor] = await hre.ethers.getSigners();
+    
 
     // コントラクトのdeploy
     const daitokenContractFactory = await hre.ethers.getContractFactory(

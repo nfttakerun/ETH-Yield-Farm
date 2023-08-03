@@ -1,5 +1,4 @@
 import { ethers } from 'ethers';
-import { JsonRpcProvider } from '@ethersproject/providers';
 import React, { useEffect, useState } from 'react';
 
 /* ABIファイルをインポートする */
@@ -26,7 +25,7 @@ function App() {
   const tokenfarmAddress = '0x674545249e3b8fA4A627C8B74EB0E401631bd3dc';
 
   //ウォレットアドレス(コントラクトの保持者)を記載
-  const walletAddress = '0xf9d7416d32B3D63Fe4Bf90c66c983248Dc26c624';
+  const walletAddress = '0x04CD057E4bAD766361348F26E847B546cBBc7946';
 
   /* ABIの内容を参照する変数を作成 */
   const daiTokenABI = daiAbi.abi;
@@ -54,8 +53,7 @@ function App() {
     try {
       if (ethereum) {
         // コントラクトのインスタンスを作成
-//        const provider = new ethers.providers.Web3Provider(ethereum);
-        const provider = new JsonRpcProvider.Web3Provider(ethereum);
+        const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         console.log(signer);
 
@@ -194,7 +192,7 @@ function App() {
     <div className="h-screen w-screen flex-col flex">
       <div className="text-ellipsis h-20 w-full flex items-center justify-between bg-black">
         <div className="flex items-center">
-          <img src={'farmer.png'} alt="Logo" className="px-5" />;
+        <img src="/farmer.png" alt="Logo" className="px-5" />;
           <div className="text-white text-3xl">ETH Yield Farm</div>
         </div>
         {currentAccount === '' ? (
