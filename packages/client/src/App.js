@@ -7,6 +7,9 @@ import dappAbi from './abis/DappToken.json';
 import tokenfarmAbi from './abis/TokenFarm.json';
 import './App.css';
 
+import farmer from './public/farmer.png'
+import dai from './public/dai.png'
+
 function App() {
   /* ユーザーのパブリックウォレットを保存するために使用する状態変数を定義 */
   const [currentAccount, setCurrentAccount] = useState('');
@@ -192,7 +195,7 @@ function App() {
     <div className="h-screen w-screen flex-col flex">
       <div className="text-ellipsis h-20 w-full flex items-center justify-between bg-black">
         <div className="flex items-center">
-        <img src="/farmer.png" alt="Logo" className="px-5" />;
+        <img src={farmer} alt="Logo" className="px-5" />;
           <div className="text-white text-3xl">ETH Yield Farm</div>
         </div>
         {currentAccount === '' ? (
@@ -235,7 +238,7 @@ function App() {
               onChange={handleStakeChange}
             />
             <div className="flex-row flex justify-between items-end">
-              <img src={'dai.png'} alt="Logo" className="px-5 h-9 w-18" />
+              <img src={dai} alt="Logo" className="px-5 h-9 w-18" />
               <div>DAI</div>
             </div>
           </div>
